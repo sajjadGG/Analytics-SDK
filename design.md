@@ -1,6 +1,6 @@
 To design this project one could have two main viewpoint: - a general design - domain focused
 
-Feature List:
+## Feature List:
 
 - Event System (Generic Event, Custom Event):
   - Define Custom Event - Define Event Capture
@@ -21,3 +21,22 @@ Feature List:
   - Custom Metrics
   - Notif and Alerts (like Sentry)
   - Third party connectors for both Event Capture and Dashboard
+  - Query Engine
+
+## Design
+
+it can be decomposed to following components
+
+- Data Source
+  - Event
+  - Event Capture (Trigger)
+- Connector
+
+  - Connector
+  - Config
+
+- Event Pipeline Manager
+
+  - For high scale and fault tolerance
+
+- Dashboard
