@@ -6,7 +6,7 @@ from Client import Client, SimpleClinet
 class Broker:
     class __Broker:
         def __init__(self, config) -> None:
-            # TODO: use Factory method or other design patter to create Broker based on Config
+            # TODO: use Factory method or other design pattern to create Broker based on Config
             self.config = config
 
         def capture(self, event: Event) -> None:
@@ -37,8 +37,3 @@ def init(token) -> None:
     """
     b = Broker()  # pass config
     pass
-
-
-def get_client(config) -> Client:
-    # TODO: create client based on config
-    return SimpleClinet(config.name, Broker.instance)

@@ -1,7 +1,8 @@
 from Hub import get_client, init
+from Client import SimpleClinet
 
 init()
-sc = get_client()
+sc = SimpleClinet()
 
 
 class Game:

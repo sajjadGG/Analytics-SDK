@@ -10,9 +10,9 @@ class Client:
     """
 
     # TODO: add token and configs and necessary initialization steps.
-    def __init__(self, name: str, broker: Broker) -> None:
+    def __init__(self, name: str) -> None:
         self._name = name
-        self._broker = broker
+        self._broker = Broker.instance
 
     # TODO: add topic?
     def pub(self, event: Event):
@@ -25,3 +25,21 @@ class SimpleClinet(Client):
 
     def capture_message(self, msg: str) -> None:
         self.pub(Event(msg, datetime.now()))
+
+
+class ExceptionClient(Client):
+    """
+       implement with sc :
+       enter contex and exit contex
+       to capture all exception than happens
+       and publish them
+
+    Args:
+        Client ([type]): [description]
+    """
+
+    def __enter__(self):
+        pass
+
+    def __exit__(self, exc_type, exc_val, exc_tb):
+        pass
