@@ -1,12 +1,8 @@
+from DataSource import DataSource
 import matplotlib.pyplot as plt
 
 # TODO: dashboard panel organiztion and layout
 # TODO: state, datasource
-
-
-class DataSource:
-    def fetch():
-        pass
 
 
 class ViewComponent:
