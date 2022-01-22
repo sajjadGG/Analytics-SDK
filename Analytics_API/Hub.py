@@ -1,16 +1,17 @@
 from multiprocessing.connection import Client
 from Event import Event
 from Client import Client, SimpleClinet
+from transport import create_transport
 
 
 class Broker:
     class __Broker:
-        def __init__(self, config) -> None:
+        def __init__(self, config_path="config.yaml") -> None:
             # TODO: use Factory method or other design pattern to create Broker based on Config
-            self.config = config
+            self.transport = create_transport(config_path)
 
         def capture(self, event: Event) -> None:
-            pass
+            self.transport.capture(event)
 
     instance = None
 
@@ -36,4 +37,3 @@ def init(token) -> None:
         token ([type]): [description]
     """
     b = Broker()  # pass config
-    pass

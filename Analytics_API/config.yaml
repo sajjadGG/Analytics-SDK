@@ -9,3 +9,4 @@ Transport:
     host: analytics.example.com/
     endpoint: capture/
     token: "Token example"
+    buffer: 10
