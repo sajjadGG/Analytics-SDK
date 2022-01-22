@@ -1,0 +1,11 @@
+---
+project_name: example_1
+
+Broker:
+  broker_name: example_broker
+
+Transport:
+  HTTP:
+    host: analytics.example.com/
+    endpoint: capture/
+    token: "Token example"
