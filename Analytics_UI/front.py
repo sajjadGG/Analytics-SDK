@@ -1,4 +1,4 @@
-from DataSource import DataSource
+from DataSource import DataSource, FixedDataSource
 import matplotlib.pyplot as plt
 
 # TODO: dashboard panel organiztion and layout
@@ -64,3 +64,12 @@ class BarChart(Chart):
 
     def render(self) -> None:
         plt.bar(self.heights, self.widths)
+
+
+class HistogramChart(Chart):
+    def set_datesource(self, **kwargs):
+        self.data = kwargs["datasource"].fetch()
+
+    def render(self) -> None:
+        plt.hist(self.data)
+        plt.show()
